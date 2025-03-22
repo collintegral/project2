@@ -61,7 +61,7 @@ ingredientController.createOne = async (req, res) => {
     if(result.acknowledged) {
         res.status(204).send();
     } else {
-        res.status(500).json(response.error || 'An error occurred while updating the user.')
+        res.status(500).json(response.error || 'An error occurred while updating the ingredient.')
     }
 }
 
@@ -88,7 +88,7 @@ ingredientController.updateOne = async (req, res) => {
     if(result.modifiedCount > 0) {
         res.status(204).send();
     } else {
-        res.status(500).json(response.error || 'An error occurred while updating the user.')
+        res.status(500).json(response.error || 'An error occurred while updating the ingredient.')
     }
 }
 
@@ -106,7 +106,7 @@ ingredientController.deleteOne = async (req, res) => {
         if(result.deletedCount > 0) {
             res.status(204).send();
         } else {
-            res.status(500).json(response.error || 'An error occurred while updating the user.')
+            res.status(500).json(response.error || 'An error occurred while updating the ingredient.')
         }
 }
 

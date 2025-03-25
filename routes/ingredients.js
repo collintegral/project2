@@ -3,13 +3,15 @@ const router = require('express').Router();
 const ingredientController = require('../controllers/ingredient');
 const validator = require('../middleware/validate');
 
-router.get('/', ingredientController.readAll);
+const isAuthenticated = require("../middleware/authenticate");
+
+router.get('/', isAuthenticated, ingredientController.readAll);
 router.get('/:id', ingredientController.readOne);
 
-router.post('/', validator.saveIngredient, ingredientController.createOne);
+router.post('/', isAuthenticated, validator.saveIngredient, ingredientController.createOne);
 
-router.put('/:id', validator.saveIngredient, ingredientController.updateOne);
+router.put('/:id', isAuthenticated, validator.saveIngredient, ingredientController.updateOne);
 
-router.delete('/:id', ingredientController.deleteOne);
+router.delete('/:id', isAuthenticated, ingredientController.deleteOne);
 
 module.exports = router;

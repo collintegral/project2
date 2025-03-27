@@ -44,7 +44,7 @@ recipeController.readOne = async (req, res) => {
 
 recipeController.createOne = async (req, res) => {
     const date = new Date();
-    formattedDate = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
+    formattedDate = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`
 
     const recipe = {
         name: req.body.name,
@@ -72,7 +72,7 @@ recipeController.updateOne = async (req, res) => {
     const recipeId = new ObjectId(req.params.id);
 
     const date = new Date();
-    formattedDate = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
+    formattedDate = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`
 
     const recipe = {
         name: req.body.name,

@@ -45,7 +45,7 @@ ingredientController.readOne = async (req, res) => {
 
 ingredientController.createOne = async (req, res) => {
     const date = new Date();
-    formattedDate = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
+    formattedDate = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`
 
     const ingredient = {
         name: req.body.name,
@@ -72,7 +72,7 @@ ingredientController.updateOne = async (req, res) => {
     const ingredientId = new ObjectId(req.params.id);
 
     const date = new Date();
-    formattedDate = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
+    formattedDate = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`
 
     const ingredient = {
         name: req.body.name,
